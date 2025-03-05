@@ -1,10 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import reactLogo from '@/assets/react.svg';
 import wxtLogo from '/wxt.svg';
 import './App.css';
+import { fetchExtensions } from '../utils/extensionHelpers';
 
 function App() {
   const [count, setCount] = useState(0);
+  const clickHanlder = () => {
+    fetchExtensions().then((extensions) => {
+      console.log('extensions', extensions);
+    });
+  }
 
   return (
     <>
@@ -18,13 +24,16 @@ function App() {
       </div>
       <h1>WXT + React</h1>
       <div className="card">
+
+        <button onClick={() => clickHanlder()}>
+        </button>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
-      </div>
+      </div >
       <p className="read-the-docs">
         Click on the WXT and React logos to learn more
       </p>
