@@ -1,3 +1,3 @@
-# WXT + React
+# Chrome Storage Devtools
 
-This template should help get you started developing with React in WXT.
+Let me cook
