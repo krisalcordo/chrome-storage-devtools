@@ -1,43 +1,22 @@
 import { useEffect, useState } from 'react';
-import reactLogo from '@/assets/react.svg';
-import wxtLogo from '/wxt.svg';
+import { ExtensionSingle } from './components/extensionSingle/extensionSingle';
 import './App.css';
 import { fetchExtensions } from '../utils/extensionHelpers';
+import { Header } from './components/branding/Header';
 
 function App() {
   const [count, setCount] = useState(0);
-  const clickHanlder = () => {
-    fetchExtensions().then((extensions) => {
-      console.log('extensions', extensions);
-    });
-  }
+  const [extensions, setExtensions] = useState<chrome.management.ExtensionInfo[]>([]);
+  useEffect(() => {
+    (async () => fetchExtensions().then((extensions) => setExtensions(extensions)))();
+  }, []);
+
 
   return (
-    <>
-      <div>
-        <a href="https://wxt.dev" target="_blank">
-          <img src={wxtLogo} className="logo" alt="WXT logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>WXT + React</h1>
-      <div className="card">
-
-        <button onClick={() => clickHanlder()}>
-        </button>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div >
-      <p className="read-the-docs">
-        Click on the WXT and React logos to learn more
-      </p>
-    </>
+    <div>
+      <Header />
+      {extensions.map((extension) => <ExtensionSingle extension={extension} />)}
+    </div>
   );
 }
 
