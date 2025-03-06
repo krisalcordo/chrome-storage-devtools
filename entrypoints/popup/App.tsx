@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ExtensionSingle } from './components/extensionSingle/extensionSingle';
 import './App.css';
-import { fetchExtensions } from '../utils/extensionHelpers';
+import { fetchExtensions } from '../../utils/extensionHelpers';
 import { Header } from './components/branding/Header';
 
 function App() {

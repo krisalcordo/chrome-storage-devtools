@@ -6,6 +6,11 @@ export default defineConfig({
   modules: ['@wxt-dev/module-react'],
   manifest: {
     permissions: ['management', 'tabs', 'activeTab', 'scripting', 'storage', 'debugger'],
-    host_permissions: ['"*://*/*"'],
+    web_accessible_resources: [
+      {
+        resources: ["injected.js"],
+        matches: ["*://*/*"],
+      },
+    ],
   }
 });
