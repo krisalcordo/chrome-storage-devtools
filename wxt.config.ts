@@ -5,7 +5,7 @@ export default defineConfig({
   extensionApi: 'chrome',
   modules: ['@wxt-dev/module-react'],
   manifest: {
-    permissions: ['management', 'tabs', 'activeTab', 'scripting'],
-    host_permissions: ['<all_urls>'],
+    permissions: ['management', 'tabs', 'activeTab', 'scripting', 'storage', 'debugger'],
+    host_permissions: ['"*://*/*"'],
   }
 });

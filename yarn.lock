@@ -680,7 +680,7 @@
   dependencies:
     "@vitejs/plugin-react" "^4.3.4"
 
-"@wxt-dev/storage@^1.0.0":
+"@wxt-dev/storage@^1.0.0", "@wxt-dev/storage@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@wxt-dev/storage/-/storage-1.1.0.tgz#a53bde35c36d63493b3a06f3abb5ec7782ab534d"
   integrity sha512-veya6MAc8B531W/zgm7JcCQa254B2YsMb3h9D48kUUghBDMKXqoioKSfVWEF+TbbswsMP3H9qfZ2bobNKcP+2g==
